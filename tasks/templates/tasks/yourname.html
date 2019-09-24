@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <p>O se nome e: {{ name }}</p>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %} Seu nome: {{ name }} {% endblock %}
+
+{%  block content %}
+<p>Seu nome e: {{ name }}</p>
+{% endblock %}
