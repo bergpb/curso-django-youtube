@@ -25,3 +25,11 @@ Outros comandos:
 
 1. Criando uma app:
    django-admin startapp nomedaapp
+
+1. Criando as migrations:
+   python manage.py makemigrations
+   python manage.py migrate
+
+1. Criando um usuario admin:
+   python manage.py createsuperuser 
+   
