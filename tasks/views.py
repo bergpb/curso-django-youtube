@@ -31,9 +31,9 @@ def editTask(request, id):
             task.save()
             return redirect('/')
         else:
-            return render(request, 'tasks/edittask.html', {'form': form, 'task': task})
+            return render(request, 'tasks/edit.html', {'form': form, 'task': task})
     else:
-        return render(request, 'tasks/edittask.html', {'form': form, 'task': task})
+        return render(request, 'tasks/edit.html', {'form': form, 'task': task})
 
 def deleteTask(request, id):
     task = get_object_or_404(Task, pk=id)
@@ -44,13 +44,20 @@ def deleteTask(request, id):
     return redirect('/')
 
 def taskList(request):
-    task_list = Task.objects.all().order_by('-created_at')
+    search = request.GET.get('search')
 
-    paginator = Paginator(task_list, 2)
+    if search:
 
-    page = request.GET.get('page')
+        tasks = Task.objects.filter(title__icontains=search)
 
-    tasks = paginator.get_page(page)
+    else:
+        task_list = Task.objects.all().order_by('-created_at')
+
+        paginator = Paginator(task_list, 2)
+
+        page = request.GET.get('page')
+
+        tasks = paginator.get_page(page)
 
     return render(request, 'tasks/lists.html', {'tasks': tasks})
 
