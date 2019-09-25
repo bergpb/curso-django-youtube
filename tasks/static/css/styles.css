@@ -107,3 +107,12 @@ footer p {
     margin: 5px 0 5px 0;
     color: #f5f5f5;
 }
+
+/* mensagens */
+ul.messages {
+    padding: 0 !important;
+}
+
+ul.messages li {
+    list-style: none;
+}
