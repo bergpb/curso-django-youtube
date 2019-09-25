@@ -24,6 +24,11 @@
 
 /* botao adicionar */
 
+#add-link{
+    color: white;
+    text-decoration: none;
+}
+
 .add-div {
     background-color: #3476e2;
     cursor: pointer;
