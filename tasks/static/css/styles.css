@@ -137,6 +137,12 @@ ul.messages li {
 }
 
 /* login */
-.auth-card{
+.auth-card {
     margin-bottom: 30px;
+}
+
+/* auth */
+.change-form-p {
+    margin-top: 30px;
+    text-align: center;
 }
